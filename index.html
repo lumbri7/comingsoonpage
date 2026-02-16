@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Devanshi 🎂</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="wish-page">
+
+  <!-- Fairy Lights -->
+  <div class="fairy-lights">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <section class="top-section">
+    <h1 class="animated-text">Happy Birthday Devanshi 🎂</h1>
+
+    <div class="message-container">
+      <p>🎀 Dear Devanshi, you deserve the best things in life – love, joy, and endless adventures. Thank you for being such a caring, wonderful friend. Have the most magical birthday ever! 🎀</p>
+      <p>💖 Wishing you a birthday as beautiful as your smile 💖</p>
+    </div>
+
+    <!-- Carousel -->
+    <div class="carousel">
+      <div class="carousel-inner">
+        <img src="photo1.jpg" alt="">
+        <img src="photo2.jpg" alt="">
+        <img src="photo3.jpg" alt="">
+        <img src="photo4.jpg" alt="">
+        <img src="photo5.jpg" alt="">
+        <img src="photo6.jpg" alt="">
+        <img src="photo7.jpg" alt="">
+        <img src="photo8.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="cake">🎂</div>
+  </section>
+
+  <section class="bottom-section">
+    <h2>🎈 Let’s Celebrate 🎈</h2>
+
+    <div class="balloons">
+      <span>🎈</span><span>🎈</span><span>🎈</span><span>🎈</span><span>🎈</span>
+    </div>
+
+    <p class="cake-msg">Here’s a sweet cake just for you 🍰</p>
+    <div class="cake-emoji">🎂</div>
+  </section>
+
+  <canvas id="confetti"></canvas>
+
+  <script>
+    // Falling items
+    const items = ['🌸', '🎈', '❤️', '⭐', '🎊'];
+
+    function createFallingItem() {
+      const el = document.createElement('div');
+      el.className = 'fall-item';
+      el.textContent = items[Math.floor(Math.random() * items.length)];
+      el.style.left = Math.random() * window.innerWidth + 'px';
+      el.style.animationDuration = (3 + Math.random() * 3) + 's';
+      el.style.fontSize = (18 + Math.random() * 20) + 'px';
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 6000);
+    }
+
+    setInterval(createFallingItem, 300);
+
+    // Confetti
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const confetti = Array.from({ length: 150 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 6 + 4,
+      c: `hsl(${Math.random() * 360},100%,50%)`,
+      s: Math.random() * 3 + 2
+    }));
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      confetti.forEach(p => {
+        ctx.fillStyle = p.c;
+        ctx.fillRect(p.x, p.y, p.r, p.r);
+        p.y += p.s;
+        if (p.y > canvas.height) p.y = -10;
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+
+</body>
+</html>
