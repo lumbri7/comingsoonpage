@@ -1,142 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body{
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
-body.wish-page {
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #fff1f5, #ffe6f0);
-  color: #222;
-  overflow-x: hidden;
+header {
+    background: #111;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
 }
 
-/* Fairy lights */
-.fairy-lights {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 20px;
+header h1 {
+    font-size: 40px;
 }
 
-.fairy-lights span {
-  width: 12px;
-  height: 12px;
-  background: #ff4d6d;
-  border-radius: 50%;
-  animation: glow 1.5s infinite alternate;
+section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
 }
 
-@keyframes glow {
-  from { opacity: 0.4; }
-  to { opacity: 1; }
+h2 {
+    margin-bottom: 15px;
+    color: auto;
 }
 
-/* Top section */
-.top-section {
-  text-align: center;
-  padding: 30px 20px;
+.skills u1 {
+    list-style: none;
 }
 
-.animated-text {
-  font-size: 2.2rem;
-  font-weight: 700;
-  animation: pop 1.5s ease-in-out infinite alternate;
+.skills li {
+    background: #fff;
+    padding: 10px;
+    margin: 8px 0;
+    border-left: 5px solid #111;
+}
+.project-cart {
+    background: #fff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 5px;
 }
 
-@keyframes pop {
-  from { transform: scale(1); }
-  to { transform: scale(1.05); }
+.contact p {
+    margin: 8px 0;
 }
 
-.message-container {
-  max-width: 700px;
-  margin: 20px auto;
-  font-size: 1.1rem;
-}
-
-/* Carousel */
-.carousel {
-  overflow: hidden;
-  max-width: 320px;
-  margin: 30px auto;
-  border-radius: 16px;
-}
-
-.carousel-inner {
-  display: flex;
-  animation: slide 24s infinite;
-}
-
-.carousel img {
-  width: 320px;
-  height: 400px;
-  object-fit: cover;
-}
-
-@keyframes slide {
-  0% { transform: translateX(0); }
-  12.5% { transform: translateX(-320px); }
-  25% { transform: translateX(-640px); }
-  37.5% { transform: translateX(-960px); }
-  50% { transform: translateX(-1280px); }
-  62.5% { transform: translateX(-1600px); }
-  75% { transform: translateX(-1920px); }
-  87.5% { transform: translateX(-2240px); }
-  100% { transform: translateX(0); }
-}
-
-.cake {
-  font-size: 3rem;
-  margin-top: 20px;
-}
-
-/* Bottom section */
-.bottom-section {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.balloons span {
-  font-size: 2rem;
-  animation: float 2s infinite alternate;
-}
-
-@keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-15px); }
-}
-
-.cake-msg {
-  margin: 20px 0;
-  font-size: 1.1rem;
-}
-
-.cake-emoji {
-  font-size: 3.5rem;
-}
-
-/* Falling items */
-.fall-item {
-  position: fixed;
-  top: -50px;
-  animation-name: fall;
-  animation-timing-function: linear;
-  z-index: 999;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh);
-  }
-}
-
-/* Confetti canvas */
-#confetti {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 100;
+footer {
+    text-align: centre;
+    padding: 15px;
+    backround: #111;
+    color: #fff;
 }
